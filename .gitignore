@@ -1,0 +1,7 @@
+*.pyc
+Actarium/settings.py
+media/*
+.project
+.pydevproject
+.settings/
+static/js/vendor/tiny_mce/

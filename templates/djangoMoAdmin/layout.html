@@ -1,0 +1,141 @@
+{% load static %} {% get_static_prefix as STATIC_PREFIX %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block TITLE %}{%endblock%} - Actarium</title>
+        <meta name="description" content="La solucic&oacute;n para el resgistro de actas">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="icon" type="image/x-icon" href="{{ STATIC_PREFIX }}favicon.ico">  
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/normalize.css">
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/bootstrap.css">
+        {% block style_libs %}{% endblock%}
+        <style>
+            body {
+                padding-top: 90px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+        </style>
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/main.css">
+        {%block style%}{%endblock%}
+        <script src="{{ STATIC_PREFIX }}js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			  <div class="navbar-inner">
+				<div class="container-fluid">
+				  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="brand" href="#">Project name</a>
+				  <div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+					  Logged in as <a href="#" class="navbar-link">Username</a>
+					</p>
+					<ul class="nav">
+					  <li class="active"><a href="#">Home</a></li>
+					  <li><a href="#about">About</a></li>
+					  <li><a href="#contact">Contact</a></li>
+					</ul>
+				  </div><!--/.nav-collapse -->
+				</div>
+			  </div>
+			</div>
+
+			<div class="container-fluid">
+			  <div class="row-fluid">
+				<div class="span3">
+				  <div class="well sidebar-nav">
+					<ul class="nav nav-list">
+					  <li class="nav-header">Sidebar</li>
+					  <li class="active"><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li class="nav-header">Sidebar</li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li class="nav-header">Sidebar</li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					  <li><a href="#">Link</a></li>
+					</ul>
+				  </div><!--/.well -->
+				</div><!--/span-->
+				<div class="span9">
+					{%block body%}
+					{% endblock%}
+				</div><!--/span-->
+			  </div><!--/row-->
+
+		<hr>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        <footer class="row-fluid">
+            <div  class="span3" >
+                    <p>Powered By:</p>
+                    <div>
+                        <div class="footer-pic pull-left">
+                            <a href="http://www.daiech.com" target="_blank">
+                                <div id="daiech-foot" class="img-foot">
+                                    
+                                </div>
+                            </a> 
+                        </div>
+                        <div class="footer-pic pull-right">
+                            <a href="http://www.parquesoftpereira.com" target="_blank">
+                                <div id="parque-foot" class="img-foot">
+                                    
+                                </div>
+                            </a>
+                        </div>
+                    </div>  
+            </div>
+            <div class="span3">
+                <p>
+                    <a href="http://www.daiech.com" target="_blank">www.daiech.com</a>
+                </p>
+                <p>Todos los derechos reservados</p>
+                <p><script>
+                    var f = new Date();
+                    document.write(f.getFullYear());
+                    </script>
+                </p>
+            </div>
+        </footer>
+</div>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
+        <script>window.jQuery || document.write('<script src="{{STATIC_PREFIX}}js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="{{ STATIC_PREFIX }}js/plugins.js"></script>
+        <script src="{{ STATIC_PREFIX }}js/main.js"></script>
+        <script src="{{ STATIC_PREFIX }}js/vendor/bootstrap.min.js"></script>
+        {% block js %}
+        {% endblock%}
+        <script>
+        $(document).on("ready",twitter)
+        function twitter () {
+            // !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");   
+        }
+        </script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+             // var _gaq=[['_setAccount','UA-26046263-2'],['_trackPageview']];
+             // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+             // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+             // s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
